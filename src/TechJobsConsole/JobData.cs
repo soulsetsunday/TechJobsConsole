@@ -48,7 +48,7 @@ namespace TechJobsConsole
                 //for each key/value in that list
                 foreach (KeyValuePair<string, string> kvp in job)
                 {
-                    if (kvp.Value.Contains(searchString))
+                    if (kvp.Value.ToLower().Contains(searchString))
                         //contains instead of == as some entries are messy
                     {
                         //add the list
@@ -73,7 +73,7 @@ namespace TechJobsConsole
             {
                 string aValue = row[column];
 
-                if (aValue.Contains(value))
+                if (aValue.ToLower().Contains(value))
                 {
                     jobs.Add(row);
                 }
